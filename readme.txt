@@ -6,17 +6,16 @@ Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later
 
-Fork of the Google Calendar Events 2.4 WordPress plugin. Intended for backwards compatibility only.
+Fork of the Google Calendar Events 2.4 WordPress plugin. 
 
 == Description ==
 
-Disconnected from "Simple Calendar" (formerly Google Calendar Events) on WordPress.org to provide only critical security patches.
+Compatiable with PHP7. Removed widget. 
 
-All new features added to Simple Calendar going forward.
+Added composer.
+
 
 [Google Calendar Events 2.4 Legacy on GitHub](https://github.com/moonstonemedia/WP-Google-Calendar-Events)
-
-[Simple Calendar 3.0+ on WordPress.org](https://wordpress.org/plugins/google-calendar-events/)
 
 [Simple Calendar 3.0+ on GitHub](https://github.com/moonstonemedia/Simple-Calendar)
 
