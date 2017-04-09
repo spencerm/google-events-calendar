@@ -2,7 +2,7 @@
     "name": "spencerm/google-calender-events",
     "description": "fork of wp google calender events",
     "type": "wordpress plugin",
-    "license": "GPL",
+    "license": "GPL2",
     "authors": [
         {
             "name": "spencer",

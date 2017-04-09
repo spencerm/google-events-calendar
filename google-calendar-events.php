@@ -1,8 +1,9 @@
 <?php
 /**
- * Plugin Name: Google Calendar Events 4.0
+ * Plugin Name: Google Calendar Events 
  * Plugin URI: https://github.com/spencerm/google-events-calendar
- * Description: Fork of the Google Calendar Events WordPress plugin. 
+ * Description: Fork of the Google Calendar Events WordPress plugin.
+ * Version: 4.0.0
  *
  */
 

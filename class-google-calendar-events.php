@@ -218,7 +218,6 @@ class Google_Calendar_Events {
 		include_once( 'includes/class-gce-event.php' );
 		include_once( 'includes/class-gce-feed.php' );
 		include_once( 'includes/shortcodes.php' );
-		include_once( 'views/widgets.php' );
 
 		// Admin.
 		if ( is_admin() ) {

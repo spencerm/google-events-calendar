@@ -59,62 +59,12 @@ class Google_Calendar_Events_Admin {
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ), 2 );
 
-		if ( isset( $_GET['gce_dismiss_admin_update_notices'] ) ) {
-			delete_option( 'gce_admin_update_notices' );
-		} elseif ( 'show' == get_option( 'gce_admin_update_notices' ) && current_user_can( 'manage_options' ) ) {
-			add_action( 'admin_head', array( $this, 'dismissible_admin_notices_styles' ) );
-			add_action( 'admin_notices', array( $this, 'show_admin_update_notices' ) );
-		}
-
 		// Add admin notice after plugin activation. Also check if should be hidden.
 		// add_action( 'admin_notices', array( $this, 'show_admin_notice' ) );
 
 		// Add media button for adding a shortcode.
 		add_action( 'media_buttons', array( $this, 'add_shortcode_button' ), 100 );
 		add_action( 'edit_form_after_editor', array( $this, 'add_shortcode_panel' ), 100 );
-	}
-
-	/**
-	 * @since 2.4.0
-	 */
-	public function dismissible_admin_notices_styles() {
-		?>
-		<style type="text/css">
-			body a.gce-dismiss-notice {
-				color: #ccc;
-				float: right;
-				margin-top: 9px;
-				text-decoration: none;
-			}
-			body a.gce-dismiss-notice:active,
-			body a.gce-dismiss-notice:focus {
-				outline: 0;
-			}
-			body a.gce-dismiss-notice:hover {
-				color: #aaa;
-			}
-		</style>
-		<?php
-	}
-
-	/**
-	 * @since 2.4.0
-	 */
-	public function show_admin_update_notices() {
-
-		$message = '<p>' . __( 'This is a fork of the Google Calendar Events 2.4 WordPress plugin and intended for backwards compatibility only.', 'gce' ) . '</p>' .
-		           '<p>' . __( 'All new features will be added to Simple Calendar 3.0+ going forward.', 'gce' ) . '</p>' .
-		           '<p><a href="https://wordpress.org/plugins/google-calendar-events/" target="_blank">' . __( 'Get Simple Calendar 3.0', 'gce' ) . '</a> ' .
-		           '<strong style="color:red;">' . __( 'Make sure to uninstall this plugin first.', 'gce' ) . '</strong></p>' .
-		           '<p><a href="https://www.getdrip.com/forms/9434542/submissions/new" class="button-secondary" target="_blank">' .__( 'Get notified of important updates', 'gce' ) . '</a></p>';
-
-		$url = add_query_arg( array( 'gce_dismiss_admin_update_notices' => true ) );
-		$dismiss_icon = sprintf( '<a class="dashicons-before dashicons-dismiss gce-dismiss-notice" href="%s"></a>', $url );
-		$dismiss_link = sprintf( '<p><a href="%s">' . __( 'Dismiss this notice', 'gce' ) . '</a></p>', $url );
-
-		echo '<div class="notice error gce-dismissible-notice">' .
-		        $dismiss_icon . $message . $dismiss_link .
-		     '</div>';
 	}
 
 	/**
