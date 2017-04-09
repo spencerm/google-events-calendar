@@ -1,0 +1,13 @@
+{
+    "name": "spencerm/google-calender-events",
+    "description": "fork of wp google calender events",
+    "type": "wordpress plugin",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "spencer",
+            "email": "spnzrr@gmail.com"
+        }
+    ],
+    "require": {}
+}
